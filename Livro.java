@@ -1,16 +1,15 @@
 import javax.swing.*;          
 import java.io.Serializable;   
 
-// Declara a classe Livro que implementa a interface Serializable
+
 public class Livro implements Serializable {
-    // Declaração de atributos privados da classe Livro
     private String titulo;
     private String autor;
     private String genero;
     private String url;
     private ImageIcon imagem;
 
-    // Construtor da classe Livro, que inicializa os atributos titulo, autor, genero e url
+    
     public Livro(String titulo, String autor, String genero, String url) {
         this.titulo = titulo;
         this.autor = autor;
@@ -18,7 +17,7 @@ public class Livro implements Serializable {
         this.url = url;
     }
 
-    // Métodos getter para obter os valores dos atributos privados
+    
     public String getTitulo() {
         return titulo;
     }
@@ -39,7 +38,6 @@ public class Livro implements Serializable {
         return imagem;
     }
 
-    // Método setter para definir o valor do atributo imagem
     public void setImagem(ImageIcon imagem) {
         this.imagem = imagem;
     }

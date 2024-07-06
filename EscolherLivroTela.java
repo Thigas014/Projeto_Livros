@@ -46,10 +46,10 @@ public class EscolherLivroTela {
         mainPanel.add(pesquisaPanel, BorderLayout.NORTH);
         mainPanel.add(scrollPane, BorderLayout.CENTER);
 
-        JButton limparFiltroButton = new JButton("Limpar Filtro"); // Botão para limpar o filtro
+        JButton limparFiltroButton = new JButton("Limpar Filtro"); 
         JButton voltarButton = new JButton("Voltar");
         JPanel buttonPanel = new JPanel();
-        buttonPanel.add(limparFiltroButton); // Adiciona o botão "Limpar Filtro" ao painel de botões
+        buttonPanel.add(limparFiltroButton); 
         buttonPanel.add(voltarButton);
         mainPanel.add(buttonPanel, BorderLayout.SOUTH);
         buttonPanel.setBackground(Color.GRAY);
@@ -75,14 +75,14 @@ public class EscolherLivroTela {
             }
         });
 
-        // Implementação do ActionListener para o botão "Limpar Filtro"
+    
         limparFiltroButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                livrosFiltrados.clear(); // Limpa a lista de livros filtrados
-                livrosFiltrados.addAll(livros); // Restaura os livros filtrados para a lista completa de livros
-                pesquisaField.setText(""); // Limpa o campo de pesquisa
-                atualizarListaDeLivros(livrosPanel, gbc); // Atualiza a lista de livros exibidos
+                livrosFiltrados.clear(); 
+                livrosFiltrados.addAll(livros); 
+                pesquisaField.setText(""); 
+                atualizarListaDeLivros(livrosPanel, gbc); 
             }
         });
 

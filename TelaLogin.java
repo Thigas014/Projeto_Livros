@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class TelaLogin {
 
-    private static final String NOME_ARQUIVO_USUARIOS = "userDatabase.ser";
+    private static final String USERDATABASE = "userDatabase.ser";
     private static Map<String, String> bancoDeDadosUsuarios = new HashMap<>();
 
     // Método principal para carregar dados e mostrar a tela de login
@@ -191,7 +191,7 @@ public class TelaLogin {
     // Método para carregar o banco de dados de usuários do arquivo serializado
     @SuppressWarnings("unchecked")
     private static void carregarBancoDeDadosUsuarios() {
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(NOME_ARQUIVO_USUARIOS))) {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(USERDATABASE))) {
             bancoDeDadosUsuarios = (HashMap<String, String>) ois.readObject(); // Lê o objeto do arquivo
         } catch (FileNotFoundException e) {
             System.out.println("Arquivo de banco de dados de usuários não encontrado. Um novo arquivo será criado.");
@@ -202,7 +202,7 @@ public class TelaLogin {
 
     // Método para salvar o banco de dados de usuários no arquivo serializado
     private static void salvarBancoDeDadosUsuarios() {
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(NOME_ARQUIVO_USUARIOS))) {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(USERDATABASE))) {
             oos.writeObject(bancoDeDadosUsuarios); // Escreve o objeto no arquivo
         } catch (IOException e) {
             e.printStackTrace();

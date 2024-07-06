@@ -19,15 +19,14 @@ public class RemoverLivroTela {
         JPanel mainPanel = new JPanel(new BorderLayout());
         
 
-        // Painel de pesquisa
         JPanel searchPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
         searchPanel.setBackground(Color.GRAY);
         JTextField searchField = new JTextField(20);
         JButton searchButton = new JButton("Pesquisar");
-        JButton limparFiltroButton = new JButton("Limpar Filtro"); // Botão para limpar o filtro
+        JButton limparFiltroButton = new JButton("Limpar Filtro"); 
         searchPanel.add(searchField);
         searchPanel.add(searchButton);
-        searchPanel.add(limparFiltroButton); // Adiciona o botão "Limpar Filtro" ao painel de pesquisa
+        searchPanel.add(limparFiltroButton); 
         mainPanel.add(searchPanel, BorderLayout.NORTH);
 
         JPanel livrosPanel = new JPanel(new GridBagLayout());
@@ -43,12 +42,12 @@ public class RemoverLivroTela {
         JPanel buttonPanel = new JPanel();
         buttonPanel.add(voltarButton);
         mainPanel.add(buttonPanel, BorderLayout.SOUTH);
-        buttonPanel.setBackground(Color.GRAY); // Define a cor de fundo do painel de baixo
+        buttonPanel.setBackground(Color.GRAY); 
 
         removerLivroFrame.add(mainPanel);
         removerLivroFrame.setVisible(true);
 
-        // Atualiza a lista inicialmente
+        
         atualizarListaDeLivros(livrosPanel, gbc);
 
         searchButton.addActionListener(new ActionListener() {
@@ -61,22 +60,22 @@ public class RemoverLivroTela {
                     String autor = livro.getAutor().toLowerCase();
                     String genero = livro.getGenero().toLowerCase();
 
-                    // Verifica se algum campo contém o texto de pesquisa
+                    
                     if (titulo.contains(textoPesquisa) || autor.contains(textoPesquisa) || genero.contains(textoPesquisa)) {
                         livrosFiltrados.add(livro);
                     }
                 }
-                // Atualiza a lista com os livros filtrados
+                
                 atualizarListaDeLivros(livrosPanel, gbc, livrosFiltrados);
             }
         });
 
-        // Implementação do ActionListener para o botão "Limpar Filtro"
+        
         limparFiltroButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                searchField.setText(""); // Limpa o campo de pesquisa
-                atualizarListaDeLivros(livrosPanel, gbc); // Atualiza a lista sem nenhum filtro
+                searchField.setText(""); 
+                atualizarListaDeLivros(livrosPanel, gbc); 
             }
         });
 
@@ -150,7 +149,7 @@ public class RemoverLivroTela {
                         livros.remove(livro);
                         MenuScreen.salvarBancoDeDadosLivros();
                         JOptionPane.showMessageDialog(null, "Livro removido com sucesso!");
-                        atualizarListaDeLivros(livrosPanel, gbc, livros); // Atualiza a lista após a remoção
+                        atualizarListaDeLivros(livrosPanel, gbc, livros); 
                     }
                 }
             });

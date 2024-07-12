@@ -1,3 +1,4 @@
+package src.telas;
 import javax.swing.*;
 
 public class TelaSair {

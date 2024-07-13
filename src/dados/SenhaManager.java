@@ -1,9 +1,10 @@
+package src.dados;
 import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 
 public class SenhaManager {
-    private static final String ARQUIVO_DADOS_LOGIN = "dados_login.ser";
+    private static final String ARQUIVO_DADOS_LOGIN = "src/dados/dados_login.ser";
     private static final Map<String, String> usuariosSenhas = new HashMap<>();
 
     static {

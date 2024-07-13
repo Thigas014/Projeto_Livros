@@ -1,3 +1,4 @@
+package src.dados;
 import java.io.Serializable;
 
 public class DadosLogin implements Serializable {

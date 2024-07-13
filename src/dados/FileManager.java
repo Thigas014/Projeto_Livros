@@ -1,10 +1,14 @@
+package src.dados;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import src.classes.HistoricoLivros;
+import src.classes.Livro;
+
 public class FileManager {
-    private static final String LIVROS_FILE = "livros.ser";
-    private static final String HISTORICO_FILE = "historico.ser";
+    private static final String LIVROS_FILE = "src/dados/livros.ser";
+    private static final String HISTORICO_FILE = "src/dados/historico.ser";
 
     public static void salvarLivros(List<Livro> livros) {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(LIVROS_FILE))) {
@@ -43,4 +47,3 @@ public class FileManager {
         return historicoLivros;
     }
 }
-

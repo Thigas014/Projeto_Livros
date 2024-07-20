@@ -97,8 +97,3 @@ public class VerHistoricoTela {
         historicoFrame.setVisible(true); 
     }
 }
-
-
-
-
-

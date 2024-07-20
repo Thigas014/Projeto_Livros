@@ -151,6 +151,3 @@ public class VerLivrosTela {
         return textoNormalizado.toLowerCase();
     }
 }
-
-
-

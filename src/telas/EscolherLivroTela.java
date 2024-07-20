@@ -181,6 +181,3 @@ public class EscolherLivroTela {
         return textoNormalizado.toLowerCase();
     }
 }
-
-
-

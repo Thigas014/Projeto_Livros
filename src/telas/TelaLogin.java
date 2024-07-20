@@ -10,7 +10,7 @@ import java.util.Map;
 
 public class TelaLogin {
 
-    private static final String USERDATABASE = "userDatabase.ser";
+    private static final String USERDATABASE = "src/dados/userDatabase.ser";
     private static Map<String, String> bancoDeDadosUsuarios = new HashMap<>();
 
     // Método principal para carregar dados e mostrar a tela de login

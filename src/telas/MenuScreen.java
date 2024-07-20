@@ -11,8 +11,8 @@ import java.util.List;
 
 public class MenuScreen {
     // Constantes que armazenam os nomes dos arquivos para o banco de dados e histórico
-    private static final String BOOKBATABESE = "bookDatabase.ser";
-    private static final String HISTORYDATABESE = "historyDatabase.ser";
+    private static final String BOOKBATABESE = "src/dados/bookDatabase.ser";
+    private static final String HISTORYDATABESE = "src/dados/historyDatabase.ser";
 
     static List<Livro> livros = new ArrayList<>();
     static List<Livro> historico = new ArrayList<>();

@@ -11,7 +11,8 @@ public class VerHistoricoTela {
         JFrame historicoFrame = new JFrame("Histórico de Livros");
         historicoFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); 
         historicoFrame.setSize(800, 500); 
-        historicoFrame.setResizable(false); 
+        historicoFrame.setResizable(false);
+        historicoFrame.setLocationRelativeTo(null);
 
         JPanel historicoPanel = new JPanel(new BorderLayout()); 
         

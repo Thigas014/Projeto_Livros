@@ -25,6 +25,7 @@ public class EscolherLivroTela {
         escolherLivroFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         escolherLivroFrame.setSize(800, 500);
         escolherLivroFrame.setResizable(false);
+        escolherLivroFrame.setLocationRelativeTo(null);
 
         JPanel mainPanel = new JPanel(new BorderLayout());
 

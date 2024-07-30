@@ -21,12 +21,11 @@ public class VerLivrosTela {
         JFrame verLivrosFrame = new JFrame("Livros Disponíveis");
         verLivrosFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); 
         verLivrosFrame.setSize(800, 500); 
-        verLivrosFrame.setResizable(false); 
+        verLivrosFrame.setResizable(false);
+        verLivrosFrame.setLocationRelativeTo(null); 
 
         JPanel mainPanel = new JPanel(new BorderLayout()); 
         
-
-        // Painel para pesquisa de livros
         JPanel pesquisaPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         JLabel pesquisaLabel = new JLabel("Pesquisar:");
         JTextField pesquisaField = new JTextField(20);
@@ -140,8 +139,8 @@ public class VerLivrosTela {
             livrosPanel.add(livroPanel, gbc); 
         }
 
-        livrosPanel.revalidate(); // Revalida o layout do painel de livros
-        livrosPanel.repaint(); // Repinta o painel de livros
+        livrosPanel.revalidate(); 
+        livrosPanel.repaint(); 
     }
 
     // Método para normalizar o texto removendo acentos e convertendo para minúsculas

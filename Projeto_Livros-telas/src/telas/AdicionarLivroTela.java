@@ -14,8 +14,9 @@ public class AdicionarLivroTela {
     public static void adicionarLivro() {
         JFrame adicionarLivroFrame = new JFrame("Adicionar Livro");
         adicionarLivroFrame.setSize(800, 500); 
-        adicionarLivroFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Define a operação de fechar a janela
-        adicionarLivroFrame.setResizable(false); // Impede o redimensionamento da janela
+        adicionarLivroFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        adicionarLivroFrame.setResizable(false); 
+        adicionarLivroFrame.setLocationRelativeTo(null);
 
         // Cria o painel principal com layout GridBagLayout
         JPanel adicionarLivroPanel = new JPanel(new GridBagLayout());
@@ -30,16 +31,16 @@ public class AdicionarLivroTela {
         gbc.gridx = 0; // Posição da coluna no grid
         gbc.gridy = 0; // Posição da linha no grid
         adicionarLivroPanel.add(tituloLabel, gbc); 
-        gbc.gridx = 1; // Avança para a próxima coluna
+        gbc.gridx = 1; // coluna
         adicionarLivroPanel.add(tituloField, gbc); // Adiciona o campo de texto ao painel
 
         
         JLabel autorLabel = new JLabel("Autor:");
         JTextField autorField = new JTextField(30);
-        gbc.gridx = 0; // Volta para a primeira coluna
-        gbc.gridy = 1; // Avança para a próxima linha
+        gbc.gridx = 0;
+        gbc.gridy = 1;
         adicionarLivroPanel.add(autorLabel, gbc); 
-        gbc.gridx = 1; // Avança para a próxima coluna
+        gbc.gridx = 1;
         adicionarLivroPanel.add(autorField, gbc); 
 
         
@@ -64,7 +65,7 @@ public class AdicionarLivroTela {
         JLabel imagemLabel = new JLabel("Imagem:");
         JButton selecionarImagemButton = new JButton("Selecionar Imagem");
         JLabel imagemSelecionadaLabel = new JLabel();
-        imagemSelecionadaLabel.setPreferredSize(new Dimension(100, 150)); // Define o tamanho  de imagem
+        imagemSelecionadaLabel.setPreferredSize(new Dimension(100, 150)); //tamanho img
         gbc.gridx = 0; 
         gbc.gridy = 4; 
         adicionarLivroPanel.add(imagemLabel, gbc); 
@@ -91,8 +92,8 @@ public class AdicionarLivroTela {
         adicionarLivroPanel.add(voltarButton, gbc); 
 
         
-        adicionarLivroFrame.add(adicionarLivroPanel); // Adiciona o painel ao JFrame
-        adicionarLivroFrame.setVisible(true); // Torna a janela visível
+        adicionarLivroFrame.add(adicionarLivroPanel);
+        adicionarLivroFrame.setVisible(true); 
 
         
         selecionarImagemButton.addActionListener(new ActionListener() {
@@ -152,8 +153,8 @@ public class AdicionarLivroTela {
         voltarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                adicionarLivroFrame.dispose(); // Fecha a janela de adicionar livro
-                MenuScreen.mostrarTelaMenu(); // Volta para a tela do menu
+                adicionarLivroFrame.dispose(); 
+                MenuScreen.mostrarTelaMenu(); 
             }
         });
     }

@@ -13,6 +13,7 @@ public class RemoverLivroTela {
         removerLivroFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         removerLivroFrame.setSize(800, 500);
         removerLivroFrame.setResizable(false);
+        removerLivroFrame.setLocationRelativeTo(null);
 
         JPanel removerLivroPanel = new JPanel(new BorderLayout());
 

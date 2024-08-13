@@ -1,8 +1,8 @@
 package src.telas;
-
+import java.io.Serializable;   
 import javax.swing.*;
 
-public class Livro {
+public class Livro implements Serializable {
     private String titulo;
     private String autor;
     private String genero;

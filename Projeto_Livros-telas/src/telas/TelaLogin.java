@@ -4,11 +4,18 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public class TelaLogin {
+
+    private static final String USERDATABASE = "Projeto_Livros-telas/src/dados/userDatabase.ser";
+    static Map<String, String> bancoDeDadosUsuarios = new HashMap<>();
+
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
-            UserDatabase.loadUserDatabase();
+            carregarBancoDeDadosUsuarios();
             mostrarTelaLogin();
         });
     }
@@ -69,7 +76,7 @@ public class TelaLogin {
             public void actionPerformed(ActionEvent e) {
                 String usuario = textoUsuario.getText();
                 String senha = new String(textoSenha.getPassword());
-                if (UserDatabase.verifyCredentials(usuario, senha)) {
+                if (verificarCredenciais(usuario, senha)) {
                     JOptionPane.showMessageDialog(painel, "Login bem-sucedido!");
                     frame.dispose();
                     MenuScreen.mostrarTelaMenu();
@@ -82,8 +89,32 @@ public class TelaLogin {
         botaoCadastro.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                TelaCadastro.mostrarDialogoCadastro(frame);
+                frame.dispose();
+                TelaCadastro.mostrarTelaCadastro();
             }
         });
+    }
+
+    private static boolean verificarCredenciais(String usuario, String senha) {
+        return senha.equals(bancoDeDadosUsuarios.get(usuario));
+    }
+
+    @SuppressWarnings("unchecked")
+    private static void carregarBancoDeDadosUsuarios() {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(USERDATABASE))) {
+            bancoDeDadosUsuarios = (HashMap<String, String>) ois.readObject();
+        } catch (FileNotFoundException e) {
+            System.out.println("Arquivo de banco de dados de usuários não encontrado. Um novo arquivo será criado.");
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void salvarBancoDeDadosUsuarios() {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(USERDATABASE))) {
+            oos.writeObject(bancoDeDadosUsuarios);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

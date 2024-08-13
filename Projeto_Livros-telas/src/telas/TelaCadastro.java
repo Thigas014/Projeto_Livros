@@ -6,10 +6,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class TelaCadastro {
-    public static void mostrarDialogoCadastro(JFrame parentFrame) {
-        JDialog dialogoCadastro = new JDialog(parentFrame, "Cadastro", true);
-        dialogoCadastro.setSize(800, 500);
-        dialogoCadastro.setLocationRelativeTo(parentFrame);
+
+    public static void mostrarTelaCadastro() {
+        JFrame frame = new JFrame("Cadastro");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(800, 500);
 
         JPanel painelCadastro = new JPanel(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
@@ -52,13 +53,14 @@ public class TelaCadastro {
                 String novoUsuario = textoNovoUsuario.getText();
                 String novaSenha = new String(textoNovaSenha.getPassword());
 
-                if (!novoUsuario.isEmpty() && !novaSenha.isEmpty() && !UserDatabase.userExists(novoUsuario)) {
-                    UserDatabase.addUser(novoUsuario, novaSenha);
-                    UserDatabase.saveUserDatabase();
-                    JOptionPane.showMessageDialog(dialogoCadastro, "Cadastro bem-sucedido!");
-                    dialogoCadastro.dispose();
+                if (!novoUsuario.isEmpty() && !novaSenha.isEmpty() && !TelaLogin.bancoDeDadosUsuarios.containsKey(novoUsuario)) {
+                    TelaLogin.bancoDeDadosUsuarios.put(novoUsuario, novaSenha);
+                    TelaLogin.salvarBancoDeDadosUsuarios();
+                    JOptionPane.showMessageDialog(frame, "Cadastro bem-sucedido!");
+                    frame.dispose();
+                    TelaLogin.mostrarTelaLogin();
                 } else {
-                    JOptionPane.showMessageDialog(dialogoCadastro, "Nome de usuário já existente ou campos vazios.");
+                    JOptionPane.showMessageDialog(frame, "Nome de usuário já existente ou campos vazios.");
                 }
             }
         });
@@ -66,11 +68,14 @@ public class TelaCadastro {
         botaoVoltar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                dialogoCadastro.dispose();
+                frame.dispose();
+                TelaLogin.mostrarTelaLogin();
             }
         });
 
-        dialogoCadastro.add(painelCadastro);
-        dialogoCadastro.setVisible(true);
+        frame.add(painelCadastro);
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
+        frame.setResizable(false);
     }
 }

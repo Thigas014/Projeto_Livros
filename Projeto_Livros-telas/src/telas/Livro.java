@@ -1,14 +1,13 @@
 package src.telas;
-import javax.swing.*;          
-import java.io.Serializable;   
 
+import javax.swing.*;
 
-public class Livro implements Serializable {
+public class Livro {
     private String titulo;
     private String autor;
     private String genero;
     private String url;
-    private ImageIcon imagem;
+    private Icon imagem;
 
     
     public Livro(String titulo, String autor, String genero, String url) {
@@ -18,28 +17,43 @@ public class Livro implements Serializable {
         this.url = url;
     }
 
-    
     public String getTitulo() {
         return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
     }
 
     public String getAutor() {
         return autor;
     }
 
+    public void setAutor(String autor) {
+        this.autor = autor;
+    }
+
     public String getGenero() {
         return genero;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
     }
 
     public String getUrl() {
         return url;
     }
 
-    public ImageIcon getImagem() {
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public Icon getImagem() {
         return imagem;
     }
 
-    public void setImagem(ImageIcon imagem) {
+    public void setImagem(Icon imagem) {
         this.imagem = imagem;
     }
 }

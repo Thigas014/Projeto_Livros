@@ -10,11 +10,11 @@ import java.util.List;
 
 
 public class MenuScreen {
-    // Constantes que armazenam os nomes dos arquivos para o banco de dados e histórico
+    // armazenam os nomes dos arquivos para o banco de dados e histórico
     private static final String BOOKBATABESE = "Projeto_Livros-telas/src/dados/bookDatabase.ser";
     private static final String HISTORYDATABESE = "Projeto_Livros-telas/src/dados/historyDatabase.ser";
 
-    static List<Livro> livros = new ArrayList<>();
+    public static List<Livro> livros = new ArrayList<>();
     static List<Livro> historico = new ArrayList<>();
 
     public static void mostrarTelaMenu() {
@@ -153,15 +153,3 @@ public class MenuScreen {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-

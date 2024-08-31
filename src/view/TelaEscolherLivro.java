@@ -137,7 +137,7 @@ public class TelaEscolherLivro extends BaseView{
                     if(confirmacao == JOptionPane.YES_NO_OPTION){
                         controller.abrirUrl(livro.getUrl());
                         controller.adicionarAoHistorico(livro);
-                        JOptionPane.showMessageDialog(null, "Livro adicionado ao histórico: " + livro.getTitulo());
+                        JOptionPane.showMessageDialog(null, "Livro adicionado ao histórico: " + livro.getTitulo(), "Adicionado ao histórico", JOptionPane.INFORMATION_MESSAGE);
                     }
                     
                 }

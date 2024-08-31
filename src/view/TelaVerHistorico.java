@@ -30,12 +30,17 @@ public class TelaVerHistorico {
         JButton limparHistoricoButton = new JButton("Limpar Histórico");
         limparHistoricoButton.addActionListener(e -> {
             List<LivroModel> historico = controller.getHistorico();
-            if (historico.isEmpty()){
-                JOptionPane.showMessageDialog(null, "Historico já esta limpo", "Aviso", JOptionPane.WARNING_MESSAGE);
+            int confirm = JOptionPane.showConfirmDialog(null, "Tem certeza de que limpar o historico?", "Limpar Historico", 
+            JOptionPane.YES_NO_OPTION);
+            if(confirm == JOptionPane.YES_NO_OPTION){
+                if (historico.isEmpty()){
+                    JOptionPane.showMessageDialog(null, "Historico já esta limpo", "Aviso", JOptionPane.WARNING_MESSAGE);
 
-            }else{
-                JOptionPane.showMessageDialog(null, "Histórico limpo!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
-                NavegadorDeTelas.mostrarTelaMenu();
+                }else{
+                    JOptionPane.showMessageDialog(null, "Histórico limpo!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+                    controller.limparHistorico();
+                    NavegadorDeTelas.mostrarTelaMenu();
+                }
             }
         });
 

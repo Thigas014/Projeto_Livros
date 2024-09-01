@@ -10,12 +10,6 @@ public class BancoDeDadosLivros {
     private static final String BOOKDATABASE = "src/dados/bookDatabase.ser";
     private static final String HISTORYDATABASE = "src/dados/historyDatabase.ser";
 
-    /*  ver se fica aq 
-    private MenuController controller;
-    List<LivroModel> livros = controller.carregarLivros();
-    List<LivroModel> historico = controller.carregarHistorico();
-    */
-
     public List<LivroModel> carregarLivros() {
         return carregarDados(BOOKDATABASE);
     }

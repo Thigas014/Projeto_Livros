@@ -12,7 +12,7 @@ public class MenuController {
 
     public MenuController() {
         MenuController.bancoDeDadosLivros = new BancoDeDadosLivros();
-        carregarDados();  // Carregar dados ao iniciar o controller
+        carregarDados(); 
     }
 
     private void carregarDados() {
@@ -51,31 +51,3 @@ public class MenuController {
         salvarLivros();  
     }
 }
-
-
-
-    
-    // Ações de navegação ver amanha ou quarta com o professor
-    /* 
-    public void acaoVisualizarLivros() {
-        NavegadorDeTelas.mostrarTelaVisualizarLivros(); 
-    }
-    
-    public void acaoAdicionarLivro() {
-        NavegadorDeTelas.mostrarTelaAdicionarLivro(); 
-    }
-
-    public void acaoEscolherLivro() {
-        NavegadorDeTelas.mostrarTelaEscolherLivro(); 
-    }
-
-    public void acaoVisualizarHistorico() {
-        NavegadorDeTelas.mostrarTelaVisualizarHistorico(); 
-    }
-
-    public void acaoRemoverLivro() {
-        NavegadorDeTelas.mostrarTelaRemoverLivro(); 
-    }
-        
-    */
-

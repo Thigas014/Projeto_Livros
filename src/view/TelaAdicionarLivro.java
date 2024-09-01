@@ -1,8 +1,8 @@
 package src.view;
 
 import src.controller.NavegadorDeTelas;
+import src.util.PlaceholderTextField;
 import src.controller.AdicionarLivroController;
-import src.placeholder.PlaceholderTextField;
 
 import javax.swing.*;
 import java.awt.*;
@@ -21,10 +21,6 @@ public class TelaAdicionarLivro {
 
     public void mostrarTela(JFrame frame) {
         frame.setTitle("Adicionar Livro");
-        frame.setSize(800, 500);
-        frame.setResizable(false);
-        frame.setLocationRelativeTo(null);
-        frame.getContentPane().removeAll(); // Limpa o conteúdo anterior
 
         JPanel mainPanel = new JPanel(new BorderLayout());
         JPanel adicionarLivroPanel = new JPanel(new GridBagLayout());
@@ -44,7 +40,6 @@ public class TelaAdicionarLivro {
         adicionarLivroPanel.add(tituloField, gbc);
 
         JLabel autorLabel = new JLabel("Autor(es):");
-        // Usando PlaceholderTextField com placeholder
         autorField = new PlaceholderTextField("Digite o(s) autor(es) separados por ;", 30);
         gbc.gridx = 0;
         gbc.gridy = 1;
@@ -53,7 +48,6 @@ public class TelaAdicionarLivro {
         adicionarLivroPanel.add(autorField, gbc);
 
         JLabel generoLabel = new JLabel("Gênero(s):");
-        // Usando PlaceholderTextField com placeholder
         generoField = new PlaceholderTextField("Digite o(s) gênero(s) separados por ;", 30);
         gbc.gridx = 0;
         gbc.gridy = 2;
@@ -62,7 +56,6 @@ public class TelaAdicionarLivro {
         adicionarLivroPanel.add(generoField, gbc);
 
         JLabel urlLabel = new JLabel("URL:");
-        // Usando PlaceholderTextField com placeholder
         urlField = new PlaceholderTextField("Digite a URL da imagem", 30);
         gbc.gridx = 0;
         gbc.gridy = 3;

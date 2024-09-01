@@ -1,17 +1,16 @@
 package src.controller;
 
 import src.model.LivroModel;
+import src.util.FiltrarLivros;
 import src.view.TelaEscolherLivro;
 
+import javax.swing.*;
 import java.awt.Desktop;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 
 public class EscolherLivroController {
     private List<LivroModel> livros;
@@ -35,19 +34,11 @@ public class EscolherLivroController {
     }
 
     public void filtrarLivros(String termoDePesquisa) {
-        livrosFiltrados.clear();
-        for (LivroModel livro : livros) {
-            if (livro.getTitulo().toLowerCase().contains(termoDePesquisa.toLowerCase()) ||
-                    livro.getAutor().toLowerCase().contains(termoDePesquisa.toLowerCase()) ||
-                    livro.getGenero().toLowerCase().contains(termoDePesquisa.toLowerCase())) {
-                livrosFiltrados.add(livro);
-            }
-        }
+        livrosFiltrados = FiltrarLivros.filtrarLivros(livros, termoDePesquisa);
     }
 
     public void limparFiltro() {
-        livrosFiltrados.clear();
-        livrosFiltrados.addAll(livros);
+        FiltrarLivros.limparFiltro(livrosFiltrados, livros);
     }
 
     public void voltarParaMenu() {

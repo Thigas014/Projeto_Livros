@@ -1,10 +1,8 @@
-package src.view;
+package src.util;
 
 import javax.swing.JOptionPane;
 
-import src.placeholder.PlaceholderTextField;
-
-public abstract class BaseView {
+public abstract class CampoPesquisa {
     protected boolean isCampoDePesquisaVazio(PlaceholderTextField pesquisaField) {
         String termoDePesquisa = pesquisaField.getText().trim();
         return termoDePesquisa.isEmpty() || termoDePesquisa.equals(pesquisaField.getPlaceholder());

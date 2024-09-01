@@ -13,6 +13,7 @@ public class TelaMenu {
 
     public void mostrarTela(JFrame frame) {
         frame.setTitle("Menu");
+        
         JPanel menuPanel = new JPanel(new GridLayout(0, 1));
         menuPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
         menuPanel.setBackground(Color.GRAY);

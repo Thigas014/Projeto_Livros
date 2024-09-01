@@ -3,14 +3,15 @@ package src.view;
 import src.controller.RemoverLivroController;
 import src.controller.NavegadorDeTelas;
 import src.model.LivroModel;
-import src.placeholder.PlaceholderTextField;
+import src.util.CampoPesquisa;
+import src.util.PlaceholderTextField;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.util.List;
 
-public class TelaRemoverLivro extends BaseView{
+public class TelaRemoverLivro extends CampoPesquisa{
     private RemoverLivroController controller;
     private JPanel livrosPanel;
     private PlaceholderTextField pesquisaField;
@@ -21,17 +22,13 @@ public class TelaRemoverLivro extends BaseView{
 
     public void mostrarTela(JFrame frame) {
         frame.setTitle("Remover Livros");
-        frame.setSize(800, 500);
-        frame.setResizable(false);
-        frame.setLocationRelativeTo(null);
-        frame.getContentPane().removeAll(); // Limpa o conteúdo anterior
 
         JPanel mainPanel = new JPanel(new BorderLayout());
 
         // Painel de pesquisa
         JPanel pesquisaPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         JLabel pesquisaLabel = new JLabel("Pesquisar:");
-        pesquisaField = new PlaceholderTextField("pesquise por Autor, Genêro ou Título",20);
+        pesquisaField = new PlaceholderTextField("Pesquise por Autor, Genêro ou Título",20);
         JButton pesquisarButton = new JButton("Pesquisar");
         pesquisaPanel.setBackground(Color.GRAY);
         pesquisaPanel.add(pesquisaLabel);

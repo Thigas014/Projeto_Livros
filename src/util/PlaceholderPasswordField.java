@@ -1,4 +1,4 @@
-package src.placeholder;
+package src.util;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,7 +13,7 @@ public class PlaceholderPasswordField extends JPasswordField {
         this.placeholder = placeholder;
         setEchoChar((char) 0); // Exibe o placeholder sem ocultar o texto
         setText(placeholder);
-        setForeground(Color.GRAY);
+        setForeground(Color.black);
 
         addFocusListener(new FocusAdapter() {
             @Override
@@ -30,7 +30,7 @@ public class PlaceholderPasswordField extends JPasswordField {
                 if (new String(getPassword()).isEmpty()) {
                     setEchoChar((char) 0); // Remove o echo char para mostrar o placeholder
                     setText(placeholder);
-                    setForeground(Color.GRAY);
+                    setForeground(Color.black);
                 }
             }
         });

@@ -1,6 +1,8 @@
 package src.controller;
 
 import src.model.LivroModel;
+import src.util.FiltrarLivros;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,24 +20,16 @@ public class RemoverLivroController {
     }
 
     public void filtrarLivros(String termo) {
-        livrosFiltrados.clear();
-        for (LivroModel livro : livros) {
-            if (livro.getTitulo().toLowerCase().contains(termo.toLowerCase()) ||
-                livro.getAutor().toLowerCase().contains(termo.toLowerCase()) ||
-                livro.getGenero().toLowerCase().contains(termo.toLowerCase())) {
-                livrosFiltrados.add(livro);
-            }
-        }
+        livrosFiltrados = FiltrarLivros.filtrarLivros(livros, termo);
     }
 
     public void limparFiltro() {
-        livrosFiltrados.clear();
-        livrosFiltrados.addAll(livros);
+        FiltrarLivros.limparFiltro(livrosFiltrados, livros);
     }
 
     public void removerLivro(LivroModel livro) {
         livros.remove(livro);
-        limparFiltro(); // Atualiza a lista filtrada após remoção
-        MenuController.salvarLivros(); // Salva a lista de livros atualizada
+        limparFiltro(); // Atualiza a lista filtrada 
+        MenuController.salvarLivros(); // Salva a lista de livros 
     }
 }

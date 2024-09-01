@@ -1,4 +1,4 @@
-package src.placeholder;
+package src.util;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,7 +12,7 @@ public class PlaceholderTextField extends JTextField {
         super(columns);
         this.placeholder = placeholder;
         setText(placeholder);
-        setForeground(Color.GRAY);
+        setForeground(Color.black);
 
         addFocusListener(new FocusAdapter() {
             @Override
@@ -27,7 +27,7 @@ public class PlaceholderTextField extends JTextField {
             public void focusLost(FocusEvent e) {
                 if (getText().isEmpty()) {
                     setText(placeholder);
-                    setForeground(Color.GRAY);
+                    setForeground(Color.black);
                 }
             }
         });

@@ -3,28 +3,16 @@ package src.controller;
 import java.util.List;
 
 import javax.swing.*;
+import src.view.*;
 
 import src.model.LivroModel;
-import src.view.TelaEscolherLivro;
-import src.view.TelaRemoverLivro;
-import src.view.TelaAdicionarLivro;
-import src.view.TelaCadastro;
-//import src.view.TelaAdicionarLivro;
-//import src.view.TelaEscolherLivro;
-import src.view.TelaLogin;
-import src.view.TelaMenu;
-import src.view.TelaVerHistorico;
-//import src.view.TelaVisualizarHistorico;
-import src.view.VerLivros;
-//import src.view.TelaCadastro;
-//import src.view.TelaRemoverLivro;
+
 
 
 public class NavegadorDeTelas {
     private static JFrame frame;
 
     // Inicializa o JFrame principal
-    /* */
     private static void inicializarFrame() {
         if (frame == null) {
             frame = new JFrame();
@@ -81,15 +69,16 @@ public class NavegadorDeTelas {
     
     // Exibe a tela de visualizar histórico
     public static void mostrarTelaVerHistorico() {
-    inicializarFrame();
-    frame.getContentPane().removeAll();
-    MenuController menuController = new MenuController(); 
-    VerHistoricoController controller = new VerHistoricoController(menuController.getHistorico(), menuController); // Passa o menuController
-    TelaVerHistorico verHistoricoView = new TelaVerHistorico(controller);
-    verHistoricoView.mostrarTela(frame);
-    frame.setVisible(true);
+        inicializarFrame();
+        frame.getContentPane().removeAll();
+        MenuController menuController = new MenuController(); 
+        VerHistoricoController controller = new VerHistoricoController(menuController.getHistorico(), menuController); // Passa o menuController
+        TelaVerHistorico verHistoricoView = new TelaVerHistorico(controller);
+        verHistoricoView.mostrarTela(frame);
+        frame.setVisible(true);
     }
 
+    // Exibe a tela de remover livro
     public static void mostrarTelaRemoverLivro() {
         inicializarFrame();
         frame.getContentPane().removeAll();
@@ -101,6 +90,7 @@ public class NavegadorDeTelas {
         frame.setVisible(true);
     }
 
+    //  Exibe a tela de adicionar livro
     public static void mostrarTelaAdicionarLivro() {
         inicializarFrame();
         frame.getContentPane().removeAll();
@@ -111,6 +101,7 @@ public class NavegadorDeTelas {
 
     }
 
+    // Exibe a tela de escolher livro
    public static void mostrarTelaEscolherLivro() {
         inicializarFrame();
         frame.getContentPane().removeAll();

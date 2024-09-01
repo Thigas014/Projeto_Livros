@@ -20,7 +20,6 @@ public class VerHistoricoController {
     }
 
     private void salvarHistorico() {
-        // Usa o menuController para salvar o histórico
         MenuController.salvarHistorico();
     }
 }

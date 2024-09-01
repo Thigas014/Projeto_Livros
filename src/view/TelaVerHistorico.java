@@ -18,11 +18,7 @@ public class TelaVerHistorico {
     }
 
     public void mostrarTela(JFrame frame) {
-        frame.setTitle("Histórico de Leitura");
-        frame.setSize(800, 500);
-        frame.setResizable(false);
-        frame.setLocationRelativeTo(null);
-        frame.getContentPane().removeAll(); // Limpa o conteúdo anterior
+        frame.setTitle("Histórico");
 
         JPanel mainPanel = new JPanel(new BorderLayout());
 

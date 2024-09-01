@@ -4,7 +4,8 @@ import javax.swing.*;
 
 import src.controller.CadastroController;
 import src.controller.NavegadorDeTelas;
-import src.placeholder.*;
+import src.util.*;
+
 import java.awt.*;
 
 public class TelaCadastro {
@@ -16,6 +17,7 @@ public class TelaCadastro {
 
     public void mostrarTela(JFrame frame) {
         frame.setTitle("Cadastro");
+        
         JPanel painelCadastro = new JPanel(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(10, 10, 10, 10);

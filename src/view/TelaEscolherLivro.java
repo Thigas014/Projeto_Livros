@@ -1,6 +1,7 @@
 package src.view;
 
-import src.controller.EscolherLivroController;
+import src.controller.GerenciamentoLivrosController;
+import src.controller.MenuController;
 import src.controller.NavegadorDeTelas;
 import src.model.LivroModel;
 import src.util.CampoPesquisa;
@@ -11,14 +12,14 @@ import java.awt.*;
 import java.util.List;
 
 public class TelaEscolherLivro extends CampoPesquisa{
-    private EscolherLivroController controller;
+    private GerenciamentoLivrosController controller;
     private JPanel livrosPanel;
     private PlaceholderTextField pesquisaField;
     private JButton pesquisarButton;
     private JButton limparFiltroButton;
     private JButton voltarButton;
 
-    public TelaEscolherLivro(EscolherLivroController controller) {
+    public TelaEscolherLivro(GerenciamentoLivrosController controller) {
         this.controller = controller;
     }
 
@@ -133,7 +134,7 @@ public class TelaEscolherLivro extends CampoPesquisa{
 
                     if(confirmacao == JOptionPane.YES_NO_OPTION){
                         controller.abrirUrl(livro.getUrl());
-                        controller.adicionarAoHistorico(livro);
+                        MenuController.adicionarAoHistorico(livro);
                         JOptionPane.showMessageDialog(null, "Livro adicionado ao histórico: " + livro.getTitulo(), "Adicionado ao histórico", JOptionPane.INFORMATION_MESSAGE);
                     }
                     

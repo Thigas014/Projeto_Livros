@@ -1,14 +1,18 @@
-/* 
 package src.controller;
 
 import src.dados.BancoDeDados;
 import src.model.UsuarioModel;
 
-public class CadastroController {
+public class AutenticacaoController {
     private BancoDeDados bancoDeDados;
 
-    public CadastroController() {
+    public AutenticacaoController() {
         this.bancoDeDados = new BancoDeDados();
+    }
+
+    public boolean verificarCredenciais(String usuario, String senha) {
+        String senhaArmazenada = bancoDeDados.getBancoDeDadosUsuarios().get(usuario);
+        return senhaArmazenada != null && senhaArmazenada.equals(senha);
     }
 
     public boolean cadastrarUsuario(String usuario, String senha) {
@@ -24,4 +28,3 @@ public class CadastroController {
         return true; // Cadastro bem-sucedido
     }
 }
-*/

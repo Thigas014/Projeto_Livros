@@ -1,3 +1,4 @@
+/* 
 package src.controller;
 
 import src.model.LivroModel;
@@ -22,7 +23,7 @@ public class EscolherLivroController {
         this.menuController = menuController;
         this.livros = menuController.getLivros();
         this.livrosFiltrados = new ArrayList<>(livros);
-        this.view = new TelaEscolherLivro(this);
+        //this.view = new TelaEscolherLivro(this);
     }
 
     public void mostrarTela(JFrame frame) {
@@ -57,4 +58,6 @@ public class EscolherLivroController {
     public void adicionarAoHistorico(LivroModel livro) {
         menuController.adicionarAoHistorico(livro);
     }
+
 }
+*/

@@ -1,11 +1,7 @@
 package src.controller;
 
-import java.util.List;
-
 import javax.swing.*;
 import src.view.*;
-
-import src.model.LivroModel;
 
 
 
@@ -25,7 +21,7 @@ public class NavegadorDeTelas {
 
     // Exibe a tela de login
     public static void mostrarTelaLogin() {
-        LoginController controller = new LoginController();
+        AutenticacaoController controller = new AutenticacaoController();
         TelaLogin telaLogin = new TelaLogin(controller);
         inicializarFrame();
         frame.getContentPane().removeAll();
@@ -35,7 +31,7 @@ public class NavegadorDeTelas {
 
     // Exibe a tela de cadastro
     public static void mostrarTelaCadastro() {
-        CadastroController controller = new CadastroController();
+        AutenticacaoController controller = new AutenticacaoController();
         TelaCadastro telaCadastro = new TelaCadastro(controller);
         inicializarFrame();
         frame.getContentPane().removeAll();
@@ -58,10 +54,7 @@ public class NavegadorDeTelas {
     public static void mostrarTelaVisualizarLivros() {
         inicializarFrame();
         frame.getContentPane().removeAll();
-        // Obtenha a lista de livros do MenuController
-        MenuController menuController = new MenuController();
-        List<LivroModel> listaDeLivros = menuController.getLivros(); 
-        VerLivrosController controller = new VerLivrosController(listaDeLivros);
+        GerenciamentoLivrosController controller = new GerenciamentoLivrosController();
         VerLivros telaVisualizarLivros = new VerLivros(controller);
         telaVisualizarLivros.mostrarTela(frame);
         frame.setVisible(true);
@@ -71,8 +64,7 @@ public class NavegadorDeTelas {
     public static void mostrarTelaVerHistorico() {
         inicializarFrame();
         frame.getContentPane().removeAll();
-        MenuController menuController = new MenuController(); 
-        VerHistoricoController controller = new VerHistoricoController(menuController.getHistorico(), menuController); // Passa o menuController
+        GerenciamentoLivrosController controller = new GerenciamentoLivrosController(); // Passa o menuController
         TelaVerHistorico verHistoricoView = new TelaVerHistorico(controller);
         verHistoricoView.mostrarTela(frame);
         frame.setVisible(true);
@@ -82,9 +74,7 @@ public class NavegadorDeTelas {
     public static void mostrarTelaRemoverLivro() {
         inicializarFrame();
         frame.getContentPane().removeAll();
-        MenuController menuController = new MenuController();
-        List<LivroModel> listaDeLivros = menuController.getLivros();
-        RemoverLivroController controller = new RemoverLivroController(listaDeLivros);
+        GerenciamentoLivrosController controller = new GerenciamentoLivrosController();
         TelaRemoverLivro removerLivroView = new TelaRemoverLivro(controller);
         removerLivroView.mostrarTela(frame);
         frame.setVisible(true);
@@ -94,7 +84,7 @@ public class NavegadorDeTelas {
     public static void mostrarTelaAdicionarLivro() {
         inicializarFrame();
         frame.getContentPane().removeAll();
-        AdicionarLivroController controller = new AdicionarLivroController();
+        GerenciamentoLivrosController controller = new GerenciamentoLivrosController();
         TelaAdicionarLivro telaAdicionarLivro = new TelaAdicionarLivro(controller);
         telaAdicionarLivro.mostrarTela(frame);
         frame.setVisible(true);
@@ -105,8 +95,7 @@ public class NavegadorDeTelas {
    public static void mostrarTelaEscolherLivro() {
         inicializarFrame();
         frame.getContentPane().removeAll();
-        MenuController menuController = new MenuController();
-        EscolherLivroController controller = new EscolherLivroController(menuController);
+        GerenciamentoLivrosController controller = new GerenciamentoLivrosController();
         TelaEscolherLivro escolherLivroView = new TelaEscolherLivro(controller);
         escolherLivroView.mostrarTela(frame);
         frame.setVisible(true);

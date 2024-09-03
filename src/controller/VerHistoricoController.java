@@ -1,25 +1,22 @@
+/* 
 package src.controller;
 
 import src.model.LivroModel;
 import java.util.List;
 
 public class VerHistoricoController {
-    private List<LivroModel> historico;
-    
-    public VerHistoricoController(List<LivroModel> historico, MenuController menuController) {
-        this.historico = historico;
+    private MenuController menuController;
+
+    public VerHistoricoController(MenuController menuController) {
+        this.menuController = menuController;
     }
 
     public List<LivroModel> getHistorico() {
-        return historico;
+        return menuController.getHistorico();
     }
 
     public void limparHistorico() {
-        historico.clear();
-        salvarHistorico();
-    }
-
-    private void salvarHistorico() {
-        MenuController.salvarHistorico();
+        menuController.limparHistorico();
     }
 }
+*/

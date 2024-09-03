@@ -1,7 +1,8 @@
 package src.view;
 
+import src.controller.GerenciamentoLivrosController;
+import src.controller.MenuController;
 import src.controller.NavegadorDeTelas;
-import src.controller.VerHistoricoController;
 import src.model.LivroModel;
 
 import javax.swing.*;
@@ -10,11 +11,9 @@ import java.awt.*;
 import java.util.List;
 
 public class TelaVerHistorico {
-    private VerHistoricoController controller;
     private JPanel livrosPanel;
 
-    public TelaVerHistorico(VerHistoricoController controller) {
-        this.controller = controller;
+    public TelaVerHistorico(GerenciamentoLivrosController controller) {
     }
 
     public void mostrarTela(JFrame frame) {
@@ -25,7 +24,7 @@ public class TelaVerHistorico {
         // Painel de botões
         JButton limparHistoricoButton = new JButton("Limpar Histórico");
         limparHistoricoButton.addActionListener(e -> {
-            List<LivroModel> historico = controller.getHistorico();
+            List<LivroModel> historico = MenuController.getHistorico();
             int confirm = JOptionPane.showConfirmDialog(null, "Tem certeza de que limpar o historico?", "Limpar Historico", 
             JOptionPane.YES_NO_OPTION);
             if(confirm == JOptionPane.YES_NO_OPTION){
@@ -34,7 +33,7 @@ public class TelaVerHistorico {
 
                 }else{
                     JOptionPane.showMessageDialog(null, "Histórico limpo!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
-                    controller.limparHistorico();
+                    MenuController.limparHistorico();
                     NavegadorDeTelas.mostrarTelaMenu();
                 }
             }
@@ -64,7 +63,7 @@ public class TelaVerHistorico {
         frame.add(mainPanel);
         frame.setVisible(true);
 
-        atualizarListaDeLivros(controller.getHistorico());
+        atualizarListaDeLivros(MenuController.getHistorico());
     }
 
     private void atualizarListaDeLivros(List<LivroModel> historico) {

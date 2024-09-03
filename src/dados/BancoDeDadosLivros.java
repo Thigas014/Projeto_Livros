@@ -26,6 +26,7 @@ public class BancoDeDadosLivros {
         salvarDados(HISTORYDATABASE, historico);
     }
 
+
     @SuppressWarnings("unchecked")
     private List<LivroModel> carregarDados(String filePath) {
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(filePath))) {

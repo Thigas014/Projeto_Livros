@@ -1,6 +1,7 @@
 package src.view;
 
-import src.controller.RemoverLivroController;
+import src.controller.GerenciamentoLivrosController;
+import src.controller.MenuController;
 import src.controller.NavegadorDeTelas;
 import src.model.LivroModel;
 import src.util.CampoPesquisa;
@@ -12,11 +13,11 @@ import java.awt.*;
 import java.util.List;
 
 public class TelaRemoverLivro extends CampoPesquisa{
-    private RemoverLivroController controller;
+    private GerenciamentoLivrosController controller;
     private JPanel livrosPanel;
     private PlaceholderTextField pesquisaField;
 
-    public TelaRemoverLivro(RemoverLivroController controller) {
+    public TelaRemoverLivro(GerenciamentoLivrosController controller) {
         this.controller = controller;
     }
 
@@ -132,7 +133,7 @@ public class TelaRemoverLivro extends CampoPesquisa{
                     "Remover Livro", JOptionPane.YES_NO_OPTION);
 
                     if (confirmacao == JOptionPane.YES_OPTION) {
-                        controller.removerLivro(livro);
+                        MenuController.removerLivro(livro);
                         atualizarListaDeLivros(controller.getLivrosFiltrados());
                         JOptionPane.showMessageDialog(null, "Livro removido com sucesso!", "Livro removido", JOptionPane.INFORMATION_MESSAGE);
                     }

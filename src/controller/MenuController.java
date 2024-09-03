@@ -20,11 +20,11 @@ public class MenuController {
         MenuController.historico = bancoDeDadosLivros.carregarHistorico();
     }
 
-    public List<LivroModel> getLivros() {
+    public static List<LivroModel> getLivros() {
         return livros;
     }
 
-    public List<LivroModel> getHistorico() {
+    public static List<LivroModel> getHistorico() {
         return historico;
     }
 
@@ -36,7 +36,7 @@ public class MenuController {
         bancoDeDadosLivros.salvarHistorico(historico);
     }
 
-    public void adicionarAoHistorico(LivroModel livro) {
+    public static void adicionarAoHistorico(LivroModel livro) {
         historico.add(livro);
         salvarHistorico(); 
     }
@@ -46,8 +46,13 @@ public class MenuController {
         salvarLivros();
     }
 
-    public void removerLivro(LivroModel livro) {
+    public static void removerLivro(LivroModel livro) {
         livros.remove(livro);
         salvarLivros();  
+    }
+
+    public static void limparHistorico() {
+        historico.clear();
+        salvarHistorico();
     }
 }

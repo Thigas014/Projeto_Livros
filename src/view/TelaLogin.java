@@ -2,17 +2,17 @@ package src.view;
 
 import javax.swing.*;
 
-import src.controller.LoginController;
+import src.controller.AutenticacaoController;
 import src.controller.NavegadorDeTelas;
 import src.util.*;
 
 import java.awt.*;
 
 public class TelaLogin {
-    private LoginController controller;
+    private AutenticacaoController controller;
 
     // O controlador é agora injetado no construtor
-    public TelaLogin(LoginController controller) {
+    public TelaLogin(AutenticacaoController controller) {
         this.controller = controller;
     }
     

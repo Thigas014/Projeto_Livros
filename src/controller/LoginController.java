@@ -1,3 +1,4 @@
+/* 
 package src.controller;
 
 import src.dados.BancoDeDados;
@@ -15,3 +16,4 @@ public class LoginController {
         return senhaArmazenada != null && senhaArmazenada.equals(senha);
     }
 }
+*/

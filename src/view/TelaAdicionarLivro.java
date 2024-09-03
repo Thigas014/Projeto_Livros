@@ -2,20 +2,20 @@ package src.view;
 
 import src.controller.NavegadorDeTelas;
 import src.util.PlaceholderTextField;
-import src.controller.AdicionarLivroController;
+import src.controller.GerenciamentoLivrosController;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class TelaAdicionarLivro {
-    private AdicionarLivroController controller;
+    private GerenciamentoLivrosController controller;
     private PlaceholderTextField tituloField;
     private PlaceholderTextField autorField;
     private PlaceholderTextField generoField;
     private PlaceholderTextField urlField;
     private JLabel imagemSelecionadaLabel;
 
-    public TelaAdicionarLivro(AdicionarLivroController controller) {
+    public TelaAdicionarLivro(GerenciamentoLivrosController controller) {
         this.controller = controller;
     }
 

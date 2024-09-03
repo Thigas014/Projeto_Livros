@@ -1,7 +1,7 @@
 package src.view;
 
+import src.controller.GerenciamentoLivrosController;
 import src.controller.NavegadorDeTelas;
-import src.controller.VerLivrosController;
 import src.model.LivroModel;
 import src.util.CampoPesquisa;
 import src.util.PlaceholderTextField;
@@ -12,11 +12,11 @@ import java.awt.*;
 import java.util.List;
 
 public class VerLivros extends CampoPesquisa {
-    private VerLivrosController controller;
+    private GerenciamentoLivrosController controller;
     private JPanel livrosPanel;
     private PlaceholderTextField pesquisaField;
 
-    public VerLivros(VerLivrosController controller) {
+    public VerLivros(GerenciamentoLivrosController controller) {
         this.controller = controller;
     }
 

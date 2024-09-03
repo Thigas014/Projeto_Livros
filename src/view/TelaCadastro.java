@@ -2,16 +2,16 @@ package src.view;
 
 import javax.swing.*;
 
-import src.controller.CadastroController;
+import src.controller.AutenticacaoController;
 import src.controller.NavegadorDeTelas;
 import src.util.*;
 
 import java.awt.*;
 
 public class TelaCadastro {
-    private CadastroController controller;
+    private AutenticacaoController controller;
 
-    public TelaCadastro(CadastroController controller) {
+    public TelaCadastro(AutenticacaoController controller) {
         this.controller = controller;
     }
 

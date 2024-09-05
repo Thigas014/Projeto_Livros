@@ -66,17 +66,24 @@ public class TelaLogin {
         botaoLogin.addActionListener(e -> {
             String usuario = textoUsuario.getText().trim();
             String senha = new String(textoSenha.getPassword()).trim();
-        
-            if (usuario.isEmpty() && senha.isEmpty()) {
+
+            //tratando o placeholder tbm
+            if ((usuario.isEmpty() || usuario.equals(textoUsuario.getPlaceholder())) && (senha.isEmpty() || senha.equals(textoSenha.getPlaceholder()))) {
                 JOptionPane.showMessageDialog(painel, "Campo de Usuário e Senha vazios", "Erro de Login!", JOptionPane.ERROR_MESSAGE);
+                return;
 
-            } else if (senha.isEmpty()) {
+            }
+            if (senha.isEmpty() || senha.equals(textoSenha.getPlaceholder())) {
                 JOptionPane.showMessageDialog(painel, "Campo de Senha vazio", "Erro de Login!", JOptionPane.ERROR_MESSAGE);
+                return;
 
-            } else if (usuario.isEmpty()) {
+            }
+            if (usuario.isEmpty() || usuario.equals(textoUsuario.getPlaceholder())) {
                 JOptionPane.showMessageDialog(painel, "Campo de Usuário vazio", "Erro de Login!", JOptionPane.ERROR_MESSAGE);
+                return;
                 
-            } else if (controller.verificarCredenciais(usuario, senha)) {
+            }
+            if (controller.verificarCredenciais(usuario, senha)) {
                 JOptionPane.showMessageDialog(painel, "Bem-vindo: " + usuario + "!", "Login bem-sucedido!", JOptionPane.INFORMATION_MESSAGE);
                 frame.dispose();
                 NavegadorDeTelas.mostrarTelaMenu(); // Navegação centralizada

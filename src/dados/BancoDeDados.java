@@ -21,11 +21,15 @@ public class BancoDeDados {
         if (!arquivo.exists()) {
             System.out.println("Arquivo de banco de dados de usuários não encontrado. Um novo arquivo será criado.");
             criarArquivoSeNaoExistir(arquivo);
-            return new HashMap<>(); 
+            return new HashMap<>();
         }
 
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(arquivo))) {
             return (HashMap<String, String>) ois.readObject();
+        } catch (EOFException e) {
+            // O arquivo está vazio, retornar um HashMap vazio
+            System.out.println("Arquivo de banco de dados de usuários está vazio.");
+            return new HashMap<>();
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
             return new HashMap<>();  // Retorna um HashMap vazio se ocorrer algum erro na leitura

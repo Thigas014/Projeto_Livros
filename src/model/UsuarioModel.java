@@ -3,16 +3,19 @@ package src.model;
 import java.io.Serializable;
 
 public class UsuarioModel implements Serializable {
-    private String usuario;
+    private static final long serialVersionUID = 1L;
+
+    private String nomeUsuario;
     private String senha;
 
-    public UsuarioModel(String usuario, String senha) {
-        this.usuario = usuario;
+    public UsuarioModel(String nomeUsuario, String senha) {
+        this.nomeUsuario = nomeUsuario;
         this.senha = senha;
     }
 
-    public String getUsuario() {
-        return usuario;
+    // Métodos getters
+    public String getNomeUsuario() {
+        return nomeUsuario;
     }
 
     public String getSenha() {

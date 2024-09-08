@@ -2,13 +2,18 @@ package src.view;
 
 import src.controller.MenuController;
 import src.controller.NavegadorDeTelas;
+import src.model.UsuarioModel;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
 public class TelaMenu {
+    private MenuController menuController;
+
+    // Construtor que recebe o MenuController
     public TelaMenu(MenuController controller) {
+        this.menuController = controller;
     }
 
     public void mostrarTela(JFrame frame) {
@@ -72,16 +77,26 @@ public class TelaMenu {
         menuPanel.add(removerLivroButton);
         menuPanel.add(sairButton);
 
-        // Adicionando o painel ao frame
-        frame.add(menuPanel);
+        // Limpando o frame e adicionando o painel
+        frame.getContentPane().removeAll();
+        frame.getContentPane().add(menuPanel);
+        frame.revalidate();
+        frame.repaint();
 
         // Ações dos botões
         visualizarLivrosButton.addActionListener(e -> NavegadorDeTelas.mostrarTelaVisualizarLivros());
         adicionarLivroButton.addActionListener(e -> NavegadorDeTelas.mostrarTelaAdicionarLivro());
-        escolherLivroButton.addActionListener(e -> NavegadorDeTelas.mostrarTelaEscolherLivro());
+        escolherLivroButton.addActionListener(e -> {
+            UsuarioModel usuarioAtual = NavegadorDeTelas.getUsuarioAtual(); // Obtém o usuário atual
+            NavegadorDeTelas.mostrarTelaEscolherLivro(usuarioAtual); // Chama o método para exibir a tela de escolher livro
+        });
+        
+
+
         visualizarHistoricoButton.addActionListener(e -> NavegadorDeTelas.mostrarTelaVerHistorico());
         removerLivroButton.addActionListener(e -> NavegadorDeTelas.mostrarTelaRemoverLivro());
 
-        sairButton.addActionListener(e -> NavegadorDeTelas.sairDaAplicacao(frame));
+        // Corrige a passagem do MenuController para o sairButton
+        sairButton.addActionListener(e -> NavegadorDeTelas.sairDaAplicacao(frame, menuController));
     }
 }

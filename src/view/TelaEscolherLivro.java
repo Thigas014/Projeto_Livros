@@ -1,7 +1,6 @@
 package src.view;
 
 import src.controller.GerenciamentoLivrosController;
-import src.controller.MenuController;
 import src.controller.NavegadorDeTelas;
 import src.model.LivroModel;
 import src.util.CampoPesquisa;
@@ -11,7 +10,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.List;
 
-public class TelaEscolherLivro extends CampoPesquisa{
+public class TelaEscolherLivro extends CampoPesquisa {
     private GerenciamentoLivrosController controller;
     private JPanel livrosPanel;
     private PlaceholderTextField pesquisaField;
@@ -31,7 +30,7 @@ public class TelaEscolherLivro extends CampoPesquisa{
         // Painel de pesquisa
         JPanel pesquisaPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         JLabel pesquisaLabel = new JLabel("Pesquisar:");
-        pesquisaField = new PlaceholderTextField("Pesquise por Autor, Genêro ou Título",20);
+        pesquisaField = new PlaceholderTextField("Pesquise por Autor, Genêro ou Título", 20);
         pesquisarButton = new JButton("Pesquisar");
         pesquisaPanel.setBackground(Color.GRAY);
         pesquisaPanel.add(pesquisaLabel);
@@ -77,7 +76,6 @@ public class TelaEscolherLivro extends CampoPesquisa{
                 controller.limparFiltro();
                 atualizarListaDeLivros(controller.getLivrosFiltrados());
             }
-
         });
 
         voltarButton.addActionListener(e -> NavegadorDeTelas.mostrarTelaMenu());
@@ -134,10 +132,9 @@ public class TelaEscolherLivro extends CampoPesquisa{
 
                     if(confirmacao == JOptionPane.YES_NO_OPTION){
                         controller.abrirUrl(livro.getUrl());
-                        MenuController.adicionarAoHistorico(livro);
+                        controller.getMenuController().adicionarLivroAoHistorico(livro);  // Linha corrigida
                         JOptionPane.showMessageDialog(null, "Livro adicionado ao histórico: " + livro.getTitulo(), "Adicionado ao histórico", JOptionPane.INFORMATION_MESSAGE);
                     }
-                    
                 }
 
                 @Override

@@ -56,28 +56,36 @@ public class TelaCadastro {
         botaoCadastro.addActionListener(e -> {
             String novoUsuario = textoNovoUsuario.getText().trim();
             String novaSenha = new String(textoNovaSenha.getPassword()).trim();
-        
-            if (novoUsuario.isEmpty() && novaSenha.isEmpty()){
-                JOptionPane.showMessageDialog(painelCadastro, "Campo de Usuário e Senha vazios", "Erro de Cadastro", JOptionPane.ERROR_MESSAGE);
 
-            } else if (novoUsuario.isEmpty()) {
+            // Verifica se ambos os campos estão vazios tratando o placeholder tbm
+            if ((novoUsuario.isEmpty() || novoUsuario.equals(textoNovoUsuario.getPlaceholder())) &&
+                    (novaSenha.isEmpty() || novaSenha.equals(textoNovaSenha.getPlaceholder()))) {
+                JOptionPane.showMessageDialog(painelCadastro, "Campo de Usuário e Senha vazios", "Erro de Cadastro!", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+
+            if (novoUsuario.isEmpty() || novoUsuario.equals(textoNovoUsuario.getPlaceholder())) {
                 JOptionPane.showMessageDialog(painelCadastro, "Campo de Usuário vazio", "Erro de Cadastro!", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
 
-            } else if (novaSenha.isEmpty()) {
+
+            if (novaSenha.isEmpty() || novaSenha.equals(textoNovaSenha.getPlaceholder())) {
                 JOptionPane.showMessageDialog(painelCadastro, "Campo de Senha vazio", "Erro de Cadastro!", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
 
-            } else if (controller.cadastrarUsuario(novoUsuario, novaSenha)) {
+
+            if (controller.cadastrarUsuario(novoUsuario, novaSenha)) {
                 JOptionPane.showMessageDialog(painelCadastro, "Cadastro bem-sucedido!", "Sucesso!", JOptionPane.INFORMATION_MESSAGE);
                 frame.dispose();
-                NavegadorDeTelas.mostrarTelaLogin();
-
+                NavegadorDeTelas.mostrarTelaLogin(); // Navegação centralizada
             } else {
                 JOptionPane.showMessageDialog(painelCadastro, "O usuário já existe.", "Erro de Cadastro!", JOptionPane.ERROR_MESSAGE);
-        
             }
         });
-        
-        
+
         botaoVoltar.addActionListener(e -> {
             frame.dispose();
             NavegadorDeTelas.mostrarTelaLogin();

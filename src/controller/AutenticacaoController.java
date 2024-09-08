@@ -5,14 +5,20 @@ import src.model.UsuarioModel;
 
 public class AutenticacaoController {
     private BancoDeDados bancoDeDados;
+    private UsuarioModel usuarioLogado;
 
     public AutenticacaoController() {
         this.bancoDeDados = new BancoDeDados();
     }
 
-    public boolean verificarCredenciais(String usuario, String senha) {
-        String senhaArmazenada = bancoDeDados.getBancoDeDadosUsuarios().get(usuario);
-        return senhaArmazenada != null && senhaArmazenada.equals(senha);
+    // Verifica credenciais e retorna o objeto UsuarioModel se as credenciais forem válidas
+    public UsuarioModel verificarCredenciais(String usuario, String senha) {
+        UsuarioModel usuarioExistente = bancoDeDados.getUsuario(usuario);
+        if (usuarioExistente != null && usuarioExistente.getSenha().equals(senha)) {
+            usuarioLogado = usuarioExistente; // Armazena o usuário logado
+            return usuarioExistente; // Retorna o objeto UsuarioModel
+        }
+        return null; // Retorna null se o login falhar
     }
 
     public boolean cadastrarUsuario(String usuario, String senha) {
@@ -20,11 +26,16 @@ public class AutenticacaoController {
             return false; // Indica falha no cadastro
         }
 
-        if (bancoDeDados.getBancoDeDadosUsuarios().containsKey(usuario)) {
+        if (bancoDeDados.getUsuario(usuario) != null) {
             return false; // Indica que o usuário já existe
         }
 
-        bancoDeDados.salvarUsuario(new UsuarioModel(usuario, senha));
+        UsuarioModel novoUsuario = new UsuarioModel(usuario, senha);
+        bancoDeDados.salvarUsuario(novoUsuario);
         return true; // Cadastro bem-sucedido
+    }
+
+    public UsuarioModel getUsuarioLogado() {
+        return usuarioLogado;
     }
 }

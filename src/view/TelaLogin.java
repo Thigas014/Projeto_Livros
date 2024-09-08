@@ -4,6 +4,7 @@ import javax.swing.*;
 
 import src.controller.AutenticacaoController;
 import src.controller.NavegadorDeTelas;
+import src.model.UsuarioModel;
 import src.util.*;
 
 import java.awt.*;
@@ -67,24 +68,37 @@ public class TelaLogin {
             String usuario = textoUsuario.getText().trim();
             String senha = new String(textoSenha.getPassword()).trim();
         
-            if (usuario.isEmpty() && senha.isEmpty()) {
+            // Tratando o placeholder também
+            if ((usuario.isEmpty() || usuario.equals(textoUsuario.getPlaceholder())) && (senha.isEmpty() || senha.equals(textoSenha.getPlaceholder()))) {
                 JOptionPane.showMessageDialog(painel, "Campo de Usuário e Senha vazios", "Erro de Login!", JOptionPane.ERROR_MESSAGE);
-
-            } else if (senha.isEmpty()) {
+                return;
+            }
+            if (senha.isEmpty() || senha.equals(textoSenha.getPlaceholder())) {
                 JOptionPane.showMessageDialog(painel, "Campo de Senha vazio", "Erro de Login!", JOptionPane.ERROR_MESSAGE);
-
-            } else if (usuario.isEmpty()) {
+                return;
+            }
+            if (usuario.isEmpty() || usuario.equals(textoUsuario.getPlaceholder())) {
                 JOptionPane.showMessageDialog(painel, "Campo de Usuário vazio", "Erro de Login!", JOptionPane.ERROR_MESSAGE);
-                
-            } else if (controller.verificarCredenciais(usuario, senha)) {
+                return;
+            }
+        
+            // Verificar credenciais e obter o objeto UsuarioModel
+            UsuarioModel usuarioLogado = controller.verificarCredenciais(usuario, senha);
+        
+            if (usuarioLogado != null) {
                 JOptionPane.showMessageDialog(painel, "Bem-vindo: " + usuario + "!", "Login bem-sucedido!", JOptionPane.INFORMATION_MESSAGE);
+                
+                // Define o usuário logado no NavegadorDeTelas
+                NavegadorDeTelas.setUsuarioAtual(usuarioLogado);
+                
                 frame.dispose();
                 NavegadorDeTelas.mostrarTelaMenu(); // Navegação centralizada
-
             } else {
                 JOptionPane.showMessageDialog(painel, "Credenciais inválidas", "Erro de Login!", JOptionPane.ERROR_MESSAGE);
             }
         });
+        
+
 
         botaoCadastro.addActionListener(e -> {
             frame.dispose();

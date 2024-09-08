@@ -1,5 +1,5 @@
 package src;
-
+    
 import src.controller.NavegadorDeTelas;
 
 public class Main {

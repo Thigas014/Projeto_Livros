@@ -6,6 +6,7 @@ import javax.swing.Icon;
 public class LivroModel implements Serializable {
     private static final long serialVersionUID = 1;
 
+    
     private String titulo;
     private String autor;
     private String genero;
@@ -61,4 +62,6 @@ public class LivroModel implements Serializable {
     public void setImagem(Icon imagem) {
         this.imagem = imagem;
     }
+
+    
 }

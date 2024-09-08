@@ -1,7 +1,6 @@
 package src.view;
 
 import src.controller.GerenciamentoLivrosController;
-import src.controller.MenuController;
 import src.controller.NavegadorDeTelas;
 import src.model.LivroModel;
 import src.util.CampoPesquisa;
@@ -133,9 +132,10 @@ public class TelaRemoverLivro extends CampoPesquisa{
                     "Remover Livro", JOptionPane.YES_NO_OPTION);
 
                     if (confirmacao == JOptionPane.YES_OPTION) {
-                        MenuController.removerLivro(livro);
+                        controller.getMenuController().removerLivro(livro);
                         atualizarListaDeLivros(controller.getLivrosFiltrados());
                         JOptionPane.showMessageDialog(null, "Livro removido com sucesso!", "Livro removido", JOptionPane.INFORMATION_MESSAGE);
+                        NavegadorDeTelas.mostrarTelaMenu();
                     }
                 }
 

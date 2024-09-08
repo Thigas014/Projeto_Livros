@@ -105,7 +105,7 @@ public class TelaAdicionarLivro {
             String genero = generoField.getText();
             String url = urlField.getText();
             Icon imagem = imagemSelecionadaLabel.getIcon();
-            controller.adicionarLivro(titulo, autor, genero, url, imagem);
+            controller.adicionarLivro(titulo, autor, genero, url, imagem, tituloField, autorField, generoField, urlField);
         });
 
         voltarButton.addActionListener(e -> NavegadorDeTelas.mostrarTelaMenu());

@@ -56,6 +56,11 @@ public class MenuController {
             bancoDeDadosLivros.atualizarHistoricoUsuario(historicoUsuario);  // Atualiza o banco de dados com o histórico limpo
         }
     }
+    // limpa o historico de livro especifico
+    public void limparLivroEspecifico(LivroModel livro) {
+        historicoUsuario.limparEspecifico(livro);
+        bancoDeDadosLivros.atualizarHistoricoUsuario(historicoUsuario); // Salva o histórico atualizado
+    }
 
     // Adiciona um livro à lista global de livros
     public void adicionarLivro(LivroModel livro) {

@@ -130,6 +130,21 @@ public class TelaVerHistorico {
         gbc.gridy = 2;
         livroPanel.add(generoLabel, gbc);
 
+         // Botão de remover livro do histórico
+        JButton removerButton = new JButton("Remover do Histórico");
+        removerButton.addActionListener(e -> {
+        int resposta = JOptionPane.showConfirmDialog(removerButton, "Tem certeza que quer limpar do histórico esse livro: " + livro.getTitulo() + "?", "Limpar", JOptionPane.YES_NO_OPTION);
+        
+        if(resposta == JOptionPane.YES_OPTION){
+            menuController.limparLivroEspecifico(livro);
+            atualizarListaDeLivros(menuController.getHistorico());
+        }
+    });
+        gbc.gridx = 2;
+        gbc.gridy = 3;
+        gbc.gridheight = 1;
+        livroPanel.add(removerButton, gbc);
+
         return livroPanel;
     }
 }

@@ -40,4 +40,10 @@ public class UserHistorico implements Serializable {
     public void limparHistorico() {
         livros.clear();
     }
+
+    // Método para limpar livro especifico
+    public void limparEspecifico(LivroModel livro){
+        livros.remove(livro);
+    }
+    
 }

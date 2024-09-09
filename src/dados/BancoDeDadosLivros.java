@@ -10,8 +10,8 @@ import java.util.List;
 import java.util.Map;
 
 public class BancoDeDadosLivros {
-    private static final String BOOKDATABASE = "src/dados/bookDatabase.ser";
-    private static final String USERHISTORYDATABASE = "src/dados/userHistoryDatabase.ser";
+    private static final String BOOKDATABASE = "src/dados/bookDatabase.txt";
+    private static final String USERHISTORYDATABASE = "src/dados/userHistoryDatabase.txt";
 
     // Carrega a lista global de livros
     public List<LivroModel> carregarLivros() {

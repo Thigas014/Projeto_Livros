@@ -6,7 +6,7 @@ import java.util.Map;
 import src.model.UsuarioModel;
 
 public class BancoDeDados {
-    private static final String USERDATABASE = "src/dados/userDatabase.ser"; 
+    private static final String USERDATABASE = "src/dados/userDatabase.txt";
     private Map<String, UsuarioModel> bancoDeDadosUsuarios;
 
     public BancoDeDados() {

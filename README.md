@@ -1,6 +1,6 @@
 ## Funcionamento das Telas do Programa
 
-Abaixo você verá como as telas do meu programa funcionam. Infelizmente, arquivos `.jar` só funcionam em PCs.
+Abaixo você verá como as telas do meu programa funcionam. Infelizmente, arquivos `.jar` só funcionam em PCs. A versão do é a 17.0.10, as versões mais atuais podem dar erros ao executar `.jar`
 
 Para executar no terminal execute o arquivo Main.java. Para executar a interface gráfica execute o arquivo Projeto_Livros-MVC.jar.
 

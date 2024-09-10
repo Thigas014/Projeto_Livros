@@ -7,12 +7,8 @@ Para executar no terminal execute o arquivo Main.java. Para executar a interface
 E para executar o arquivo jar apenas digite no terminal:
 
 ```powershell
-java -jar Projeto_Livros-MVC.jar
+java -jar C:\Users\ADMIN\Downloads\Projeto_Livros-MVC\out\artifacts\Projeto_Livros_MVC_jarV17\Projeto_Livros-MVC.jar
 ```
-
-Se quiser rodar o cógido na sua máquina, recomendo apagar os arquivos `bookDatabase.ser`, `userDatabase.ser` e `userHistoryDatabase.ser` para você ter seus próprios dados 
-
-![Dados](https://github.com/user-attachments/assets/c6dc567b-6ad9-455f-a6af-5e964cf45d4f)
 
 ### Atenção
 

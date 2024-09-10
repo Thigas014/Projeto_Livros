@@ -4,12 +4,6 @@ Abaixo você verá como as telas do meu programa funcionam. Infelizmente, arquiv
 
 Para executar no terminal execute o arquivo Main.java. Para executar a interface gráfica execute o arquivo Projeto_Livros-MVC.jar.
 
-E para executar o arquivo jar apenas digite no terminal:
-
-```powershell
-java -jar C:\Users\ADMIN\Downloads\Projeto_Livros-MVC\out\artifacts\Projeto_Livros_MVC_jarV17\Projeto_Livros-MVC.jar
-```
-
 ### Atenção
 
 - Não coloquei as mensagens de erros, por exemplo(mensagem quando os campos de textos estão vazios, etc) para não ficar extenso

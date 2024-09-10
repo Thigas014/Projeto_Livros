@@ -4,6 +4,8 @@ Abaixo você verá como as telas do meu programa funcionam. Infelizmente, arquiv
 
 Para executar no terminal execute o arquivo Main.java. Para executar a interface gráfica execute o arquivo Projeto_Livros-MVC.jar.
 
+O executavel está na pasta out/artifacts/Projeto_Livros_MVC_jarV17
+
 ### Atenção
 
 - Não coloquei as mensagens de erros, por exemplo(mensagem quando os campos de textos estão vazios, etc) para não ficar extenso

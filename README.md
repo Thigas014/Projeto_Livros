@@ -1,10 +1,19 @@
 ## Funcionamento das Telas do Programa
 
-Abaixo você verá como as telas do meu programa funcionam. Infelizmente, arquivos `.jar` só funcionam em PCs. A versão do é a 17.0.10, as versões mais atuais podem dar erros ao executar `.jar`
+Abaixo você verá como as telas do meu programa funcionam. A versão do java é a 17.0.10, as versões mais atuais podem dar erros ao executar `.jar` no cmd.
 
-Para executar no terminal execute o arquivo Main.java. Para executar a interface gráfica execute o arquivo Projeto_Livros-MVC.jar.
+Para executar no terminal execute o arquivo `Main`. Para executar a interface gráfica execute o arquivo Projeto_Livros-MVC.jar.
 
-O executavel está na pasta out/artifacts/Projeto_Livros_MVC_jar, basta baixar e executar em java. Os dados serão salvos em uma pasta chamada dados.
+![image](https://github.com/user-attachments/assets/5642a4c8-5080-45b5-81dd-ba8f98bdf5f9)
+
+Ao executar o Main pela primeira vez vai aparacer uma pasta chamada `out` (onde está amarelo) que é o código compiliado e arquivo jar, se quiser pode apagar o `out` que está em azul
+
+![image](https://github.com/user-attachments/assets/80b21f72-328e-408f-8b45-c97bd17c4167)
+
+A imagem acima mostra o caminho até o `jar` em ambos os `out`.
+
+
+Se preferir baixar só o executável por aqui, ele está na pasta out/artifacts/Projeto_Livros_MVC_jar, basta baixar e executar em java. Os dados serão salvos em uma pasta chamada `dados`.
 
 ### Atenção
 

@@ -2,6 +2,8 @@
 
 Abaixo você verá como as telas do meu programa funcionam. A versão do java é a 17.0.10, as versões mais atuais podem dar erros ao executar `.jar` no cmd.
 
+O sistema foi estruturado com base no padrão MVC (Model-View-Controller), há tratamento robusto de exceções usando blocos try-catch, o que previne falhas inesperadas e o armazenamento de dados, implementei serialização em disco, o que possibilita que os dados dos usuários e livros sejam salvos de forma persistente.
+
 Para executar no terminal execute o arquivo `Main`. Para executar a interface gráfica execute o arquivo Projeto_Livros-MVC.jar.
 
 ![image](https://github.com/user-attachments/assets/5642a4c8-5080-45b5-81dd-ba8f98bdf5f9)

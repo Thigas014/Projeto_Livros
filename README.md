@@ -1,105 +1,113 @@
-<h1 align="center">
- 🖥️ Sistema de Gerenciamento de Livros
-</h1>
+<h1 align="center">🖥️ Sistema de Gerenciamento de Livros</h1>
+<p> Projeto desenvolvido na disciplina de Programação Orientada a Objetos (POO). </p>
 
-## Funcionamento das Telas do Programa
+## 🎯 Funcionamento das Telas do Programa
 
-Abaixo você verá como as telas do meu programa funcionam. A versão do java é a 17.0.10, as versões mais atuais podem dar erros ao executar `.jar` no cmd.
+Este sistema de gerenciamento de livros foi desenvolvido com Java 17.0.10 e segue o padrão MVC (Model-View-Controller). Ele oferece persistência de dados através de serialização e inclui tratamento robusto de exceções para prevenir falhas.
 
-O sistema foi estruturado com base no padrão MVC (Model-View-Controller), há tratamento robusto de exceções usando blocos try-catch, o que previne falhas inesperadas e o armazenamento de dados, implementei serialização em disco, o que possibilita que os dados dos usuários e livros sejam salvos de forma persistente.
+Para rodar o projeto, basta executar o arquivo `Main` no terminal ou o arquivo `Projeto_Livros-MVC.jar` para a interface gráfica.
 
-Para executar no terminal execute o arquivo `Main`. Para executar a interface gráfica execute o arquivo Projeto_Livros-MVC.jar.
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/5642a4c8-5080-45b5-81dd-ba8f98bdf5f9" alt="Arquivos compilados" />
+</p>
 
-![image](https://github.com/user-attachments/assets/5642a4c8-5080-45b5-81dd-ba8f98bdf5f9)
+Ao rodar o `Main`, uma pasta chamada `out` será gerada. O arquivo `.jar` pode ser executado diretamente, e os dados serão salvos na pasta `dados`.
 
-Ao executar o Main pela primeira vez vai aparacer uma pasta chamada `out` (onde está amarelo) que é o código compiliado e arquivo jar, se quiser pode apagar o `out` que está em azul
+Se preferir baixar só o executável, ele está na pasta out/artifacts/Projeto_Livros_MVC_jar, basta baixar e executar em java. Os dados serão salvos em uma pasta chamada `dados`. Ou clicando [aqui](https://drive.usercontent.google.com/u/1/uc?id=18etojLItY5qqdJ2QB3yQs6HS1Wqxt2h6&export=download)
 
-![image](https://github.com/user-attachments/assets/80b21f72-328e-408f-8b45-c97bd17c4167)
+### 🚨 Atenção
 
-A imagem acima mostra o caminho até o `jar` em ambos os `out`.
+- Os livros são salvos globalmente, ou seja, qualquer usuário que fizer login na mesma máquina terá acesso aos livros cadastrados. Apenas o histórico é individual por usuário.
+- O histórico é baseado no nome do usuário. O sistema não aceita nomes duplicados.
+- Não coloquei as mensagens de erros, por exemplo(mensagem quando os campos de textos estão vazios, etc) para a documentação não ficar extensa.
 
+## 🖼️ Telas do Programa
 
-Se preferir baixar só o executável por aqui, ele está na pasta out/artifacts/Projeto_Livros_MVC_jar, basta baixar e executar em java. Os dados serão salvos em uma pasta chamada `dados`.
-ou clicando [aqui](https://drive.usercontent.google.com/u/1/uc?id=18etojLItY5qqdJ2QB3yQs6HS1Wqxt2h6&export=download)
-### Atenção
+### 🔑 Tela de Login
 
-- Não coloquei as mensagens de erros, por exemplo(mensagem quando os campos de textos estão vazios, etc) para não ficar extenso
-- Vale resaltar que os livros são salvos globalmente, ou seja, todos que fizerem login na sua maquina, vai ter acesso aos seus livros. Apenas o histórico é individual para cada usuário
-- O histórico é feito pelo nome do usuário, logo, o programa não aceita nomes iguais
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/68f18c4d-5c5f-4983-923b-33ae6c5f7b25" alt="Tela de login" />
+</p>
 
-### Tela de Login
+A primeira tela exibida ao iniciar o programa é a tela de login. Ela contém campos de texto para o nome de usuário e senha, que é ocultada com `JPasswordField`.
 
-Ao abrir o arquivo `.jar`, a primeira tela que aparecerá para o usuário é a tela de login:
+### 📝 Tela de Cadastro
 
-![Tela de login](https://github.com/user-attachments/assets/68f18c4d-5c5f-4983-923b-33ae6c5f7b25)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/5fc530db-2141-4e6f-b09e-0946efdaba1f" alt="Tela de cadastro" />
+</p>
 
-Nesta tela, há dois campos de texto para o usuário inserir o nome de usuário e um campo de senha utilizando o `JPasswordField` para deixar a senha codificada. 
+Ao clicar no botão "Cadastrar", o usuário é redirecionado para a tela de cadastro, que possui funcionalidades semelhantes à de login.
 
+### ✅ Tela de Login Bem-Sucedido
 
-### Tela de Cadastro
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/8a8ce27f-9722-4df0-af94-9797178d73e8" alt="Tela de login bem-sucedido"/>
+</p>
 
-Há também um botão para cadastro. Ao apertar esse botão, abrirá uma nova tela para o usuário se cadastrar, basicamente com as mesmas funções da tela de login:
+Quando o login é realizado com sucesso, uma mensagem de confirmação é exibida, e o usuário é levado para o menu principal.
 
-![Tela cadastro](https://github.com/user-attachments/assets/5fc530db-2141-4e6f-b09e-0946efdaba1f)
+### 📋 Tela de Menu
 
-### Tela de Login Bem-sucedido
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/471e5602-1871-4742-95c3-cc6121c02e56" alt="Tela de menu"/>
+</p>
 
-Ao se cadastrar, o usuário voltará para a tela de login. Ao preencher os campos corretamente, aparecerá uma mensagem indicando que o login foi bem-sucedido, e a tela de menu será aberta:
+O menu principal contém seis opções: "Ver Livros", "Adicionar Livro", "Escolher Livro", "Ver Histórico", "Remover Livro" e "Sair".
 
-![Tela login certo](https://github.com/user-attachments/assets/8a8ce27f-9722-4df0-af94-9797178d73e8)
+### 📚 Tela de Ver Livros
 
-### Tela de Menu
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/9f61b53c-ce3f-4fb2-92b3-ddb343312a3e" alt="Tela de Ver Livros"/>
+</p>
 
-A tela de menu contém 6 botões: "Ver Livros", "Adicionar Livro", "Escolher Livro", "Ver Histórico", "Remover Livro" e "Sair".
+Na tela "Ver Livros", é possível ver todos os livros cadastrados. Há um campo de busca para facilitar a localização de livros por nome, autor ou gênero.
 
-![Tela de menu](https://github.com/user-attachments/assets/471e5602-1871-4742-95c3-cc6121c02e56)
+### ➕ Tela de Adicionar Livro
 
-### Tela de Ver Livros
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/ccb0c003-c0e5-4661-b4c9-87b0bf790952" alt="Tela de Adicionar Livro" />
+</p>
 
-A tela de "Ver Livros" mostra os livros disponíveis. Há também um campo de pesquisa para procurar um livro, seja pelo nome, autor ou gênero, sem necessidade de digitar corretamente. Ao lado do botão "Voltar" para o menu, há um botão para limpar o filtro de pesquisa. Ao apertar o botão "Voltar", a tela de menu será exibida.
+Na tela "Adicionar Livro", o usuário preenche quatro campos obrigatórios para adicionar um livro. É possível também adicionar uma imagem de capa e uma URL.
 
-![Tela de ver livro](https://github.com/user-attachments/assets/9f61b53c-ce3f-4fb2-92b3-ddb343312a3e)
+### 📖 Tela de Escolher Livro
 
-### Tela de Adicionar Livro
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/07826d34-916c-4b43-bced-22453d17f764" alt="Tela de Escolher Livro"/>
+</p>
 
-Na tela de "Adicionar Livro", há 4 campos de texto para o usuário. Dou atenção especial ao campo de URL, que é responsável pelo link do livro na internet. Também há um botão para adicionar uma imagem. Todos são obrigatórios
+A tela "Escolher Livro" permite que os livros sejam selecionados. Ao clicar no livro, uma confirmação é exibida e, ao aceitar, o navegador abre a URL do livro.
 
-![Tela de adicionar livro](https://github.com/user-attachments/assets/ccb0c003-c0e5-4661-b4c9-87b0bf790952)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/8458364b-693e-4a80-816e-96f2d2308d88" alt="Confirmação de escolha" />
+  <img src="https://github.com/user-attachments/assets/55eaec66-7769-40e0-8c88-6da8df0473b6" alt="Tela do navegador" />
+</p>
 
-Ao adicionar um livro corretamente, aparecerá uma mensagem indicando que o livro foi adicionado com sucesso, e a tela de menu será exibida
+### 📜 Tela de Ver Histórico
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/ed0ebb62-7213-485f-ba97-dc58845b382d" alt="Tela de Ver Histórico"/>
+</p>
 
-### Tela de Escolher Livro
+A tela "Ver Histórico" exibe o histórico de livros já acessados pelo usuário, com a opção de limpar o histórico completo ou um livro específico.
 
-A tela de "Escolher Livro" é semelhante à tela de "Ver Livros", com a diferença de que os livros são clicáveis.
+### ❌ Tela de Remover Livro
 
-![Tela de escolher](https://github.com/user-attachments/assets/07826d34-916c-4b43-bced-22453d17f764)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/46143abd-281a-4601-81ac-ecfc6de49e3f" alt="Tela de Remover Livro"/>
+</p>
 
-Ao clicar no livro, haverá uma confirmação, e ao apertar em "Yes", o navegador do usuário abrirá o link do livro que ele colocou, além disso o livro vai ser adicionado ao histórico
+Semelhante à tela "Escolher Livro", mas com a funcionalidade de remover o livro selecionado. O sistema confirma antes de executar a ação.
 
-![image](https://github.com/user-attachments/assets/8458364b-693e-4a80-816e-96f2d2308d88)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/d848533d-07d6-414c-95d8-cc649d59ed38" alt="Confirmação de Remoção"/>
+</p>
 
-![Tela de navegador](https://github.com/user-attachments/assets/55eaec66-7769-40e0-8c88-6da8df0473b6)
+### 🚪 Tela de Sair
 
-### Tela de Ver Histórico
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/cab58c52-f7bd-4d92-a77f-74481f80d04f" alt="Tela de Sair"/>
+</p>
 
-A tela de "Ver Histórico" é semelhante às telas já vistas, com a diferença de haver um botão no lado direito para limpar o histórico e ser individual para cada usuário:
-
-![Tela de historico](https://github.com/user-attachments/assets/ed0ebb62-7213-485f-ba97-dc58845b382d)
-
-
-### Tela de Remover Livro
-
-A tela de "Remover Livro" é semelhante à tela de "Escolher Livro", com um botão para remover o livro:
-
-![Tela de remover](https://github.com/user-attachments/assets/46143abd-281a-4601-81ac-ecfc6de49e3f)
-
-![Tela de mensagem remover](https://github.com/user-attachments/assets/d848533d-07d6-414c-95d8-cc649d59ed38)
-
-### Tela de Sair
-
-A última tela é a de sair:
-
-![Tela de sair](https://github.com/user-attachments/assets/cab58c52-f7bd-4d92-a77f-74481f80d04f)
-
-Ao apertar "Yes", o aplicativo fecha e encerra o programa. Caso o usuário aperte "No", a aplicação continua na tela de menu.
+Na tela de "Sair", o sistema solicita confirmação. Se o usuário escolher "Yes", o programa será encerrado.
